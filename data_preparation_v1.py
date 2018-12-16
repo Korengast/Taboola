@@ -33,6 +33,7 @@ def calc_click_rate(click_ratio, campaign, date):
         row = s_tot_df[s_tot_df['campaign_id'] == campaign][s_tot_df['d'] == date]
         return float(click_ratio / row['clicks_ratio'])
     except:
+        # Assign None to the nonexsitents rows
         print('Could not find row')
         nonexist_rows['campaign_id'].append(campaign)
         nonexist_rows['d'].append(date)
@@ -48,7 +49,7 @@ s_seg_df['click_rate'] = df. \
 
 nonexist_rows = pd.DataFrame(nonexist_rows)
 
-# Svaing the dataframes
-s_seg_df.to_csv('data\\segments.csv')
-s_tot_df.to_csv('data\\total.csv')
-nonexist_rows.to_csv('data\\nonexist.csv')
+# Saving the dataframes
+s_seg_df.to_csv('data_v1\\segments.csv')
+s_tot_df.to_csv('data_v1\\total.csv')
+nonexist_rows.to_csv('data_v1\\nonexist.csv')

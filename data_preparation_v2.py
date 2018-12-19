@@ -27,15 +27,15 @@ plt.scatter(zoom_df['d_segment_views'], zoom_df['clicks_ratio'])
 plt.show()
 
 # Correcting the clicks_ratio calculation
-s_seg_df['clicks_ratio'] = s_seg_df['d_segment_clicks'] / (s_seg_df['d_segment_views'])**0.5
+# s_seg_df['clicks_ratio'] = s_seg_df['d_segment_clicks'] / (s_seg_df['d_segment_views'])**0.5
 
 # Plot again
-plt.scatter(s_seg_df['d_segment_views'], s_seg_df['clicks_ratio'])
-plt.show()
-zoom_df = s_seg_df[s_seg_df['d_segment_views'] >= \
-                   np.median(s_seg_df['d_segment_views'])]
-plt.scatter(zoom_df['d_segment_views'], zoom_df['clicks_ratio'])
-plt.show()
+# plt.scatter(s_seg_df['d_segment_views'], s_seg_df['clicks_ratio'])
+# plt.show()
+# zoom_df = s_seg_df[s_seg_df['d_segment_views'] >= \
+#                    np.median(s_seg_df['d_segment_views'])]
+# plt.scatter(zoom_df['d_segment_views'], zoom_df['clicks_ratio'])
+# plt.show()
 
 s_seg_df = s_seg_df[s_seg_df['d_segment_views'] >= \
                     np.percentile(s_seg_df['d_segment_views'], 25)]
